@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-display: "Poppins", sans-serif;
+
+  --color-primary: #1E3A8A;
+  --color-accent: #D4AF37;
+  --color-secondary: #3B82F6;
+  --color-background: #F8FAFC;
+  --color-card: #FFFFFF;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-slate-900 font-sans overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3 bg-primary text-white font-display font-medium rounded-full transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:scale-105 active:scale-95;
+  }
+
+  .btn-accent {
+    @apply px-8 py-3 bg-accent text-white font-display font-medium rounded-full transition-all duration-300 hover:bg-accent/90 hover:shadow-lg hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply px-8 py-3 border-2 border-primary text-primary font-display font-medium rounded-full transition-all duration-300 hover:bg-primary hover:text-white;
+  }
+
+  .section-padding {
+    @apply py-20 px-6 md:px-12 lg:px-24;
+  }
+}
+
+.geometric-pattern {
+  background-image: radial-gradient(#1e3a8a10 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.gradient-mesh {
+  background: radial-gradient(at 0% 0%, hsla(225,39%,30%,0.05) 0, transparent 50%),
+              radial-gradient(at 50% 0%, hsla(45,65%,52%,0.05) 0, transparent 50%),
+              radial-gradient(at 100% 0%, hsla(217,91%,60%,0.05) 0, transparent 50%);
+}
